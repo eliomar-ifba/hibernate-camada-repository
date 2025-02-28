@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1">
+
+	<!-- Nome da unidade de persistência (qualquer nome) -->
+	<persistence-unit name="mysql">
+		<properties>
+			<!-- Local DB -->
+			<property name="jakarta.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/nomedb?useSSL=false&amp;serverTimezone=UTC" />
+			<!-- Driver DB -->
+			<property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+			<!-- Usuário DB -->
+			<property name="jakarta.persistence.jdbc.user" value="root" />
+			<!-- Senha DB -->
+			<property name="jakarta.persistence.jdbc.password" value="123456" />
+			<!-- create / create-drop / update / none -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+
+
+			<!-- Mostrar SQL no console log-->
+			<property name="hibernate.show_sql" value="true" />
+			<!-- Mostrar no formato SQL -->
+			<property name="hibernate.format_sql" value="true" />
+
+		</properties>
+	</persistence-unit>
+
+
+	<!-- OUTRA UNIDADE DE PERSISTENCIA -->
+	<persistence-unit name="jpa-h2">
+		<properties>
+
+		</properties>
+	</persistence-unit>
+
+</persistence>
